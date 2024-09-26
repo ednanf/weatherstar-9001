@@ -1,7 +1,8 @@
 /* Comprises both temperature, degree symbol and weather conditions */
 #main-temp-container {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
+    align-items: center;
 }
 
 /* Temperature - only the number*/
@@ -27,6 +28,8 @@
 
 /* Weather icon - it works because the component returns an img anyway*/
 #main-temp-container img {
-    height: 100px;
+    height: auto;
     width: auto;
+    max-height: 70px;
+    max-width: auto;
 }
