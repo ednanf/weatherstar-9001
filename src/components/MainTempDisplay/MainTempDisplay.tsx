@@ -1,6 +1,7 @@
 import React from 'react';
 
-import Sunny from '../../assets/WeatherIcons/Sunny.gif';
+// import Sunny from '../../assets/WeatherIcons/Sunny.gif';
+import Sunny from '../../libraries/WeatherIcons/Sunny';
 
 import './MainTempDisplay.css';
 
@@ -19,7 +20,9 @@ const MainTempDisplay = () => {
         </div>
         <p id='main-conditions'>Sunny</p>
       </div>
-      <img src={Sunny} alt='' />
+      <div className='main-weather-icon'>
+        <Sunny />
+      </div>
     </div>
   );
 };
