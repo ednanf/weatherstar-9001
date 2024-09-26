@@ -1,0 +1,32 @@
+/* Comprises both temperature, degree symbol and weather conditions */
+#main-temp-container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+/* Temperature - only the number*/
+#main-temperature {
+    display: flex;
+    font-family: 'Star4000';
+    font-size: 3rem;
+    margin-left: 15px;
+}
+
+/* Necessary due to bad font */
+#main-degrees {
+    font-family: 'Helvetica';
+    font-size: 3rem;
+    padding-left: 3px;
+}
+
+/* Weather conditions */
+#main-conditions {
+    font-family: 'Star4000';
+    font-size: 2rem;
+}
+
+/* Weather icon */
+#main-temp-container img {
+    height: 100px;
+    width: auto;
+}
