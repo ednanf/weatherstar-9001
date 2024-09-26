@@ -1,4 +1,5 @@
 import Header from './components/Header/Header';
+import ContentContainer from './components/ContentContainer/ContentContainer';
 
 import './App.css';
 
@@ -9,7 +10,7 @@ function App() {
         <Header />
       </header>
       <main>
-        <p>main</p>
+        <ContentContainer />
       </main>
     </>
   );
