@@ -1,3 +1,38 @@
+@font-face {
+    font-family: 'Star4000';
+    src: url(./assets/Fonts/Star4000/Star4000.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'star4000-Small';
+    src: url(./assets/Fonts/Star4000/Star4000-Small.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Star4000-Large';
+    src: url(./assets/Fonts/Star4000/Star4000-Large.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Star4000-Large-Compressed';
+    src: url(./assets/Fonts/Star4000/Star4000-Large-Compressed.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Star4000-Large-Compressed-Numbers';
+    src: url(./assets/Fonts/Star4000/Star4000-Large-Compressed-Numbers.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Star4000-Extended';
+    src: url(./assets/Fonts/Star4000/Star4000-Extended.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Star-4-Radar';
+    src: url(./assets/Fonts/Star4000/Star-4-Radar.ttf) format('truetype');
+}
+
 * {
     margin: 0;
     padding: 0;

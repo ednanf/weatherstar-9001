@@ -8,3 +8,11 @@
     display: inline-block;
     margin: 0 10vw;
 }
+
+#content-container h1 {
+    font-family: 'Star4000';
+}
+
+#content-container p {
+    font-family: 'Star4000-Large';
+}
