@@ -1,4 +1,4 @@
-import BlowingSnow from '../../libraries/WeatherIcons/BlowingSnow';
+import { MostlyCloudyIcon } from '../../libraries/WeatherIcons';
 
 import './MainTempDisplay.css';
 
@@ -21,7 +21,7 @@ const MainTempDisplay = () => {
         </div>
         <p id='main-conditions'>Snow</p>
       </div>
-      <BlowingSnow />
+      <MostlyCloudyIcon />
     </div>
   );
 };
