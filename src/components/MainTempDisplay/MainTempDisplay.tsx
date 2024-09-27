@@ -2,16 +2,15 @@ import { MostlyCloudyIcon } from '../../libraries/WeatherIcons';
 
 import './MainTempDisplay.css';
 
-// TODO: Make an icon library so I can import them in a useIcon hook and use a
-// switch statement to render the appropriate icon.
+// TODO: Fix weather icon size - 75px ~ 100px
 
-// TODO: Fix weather icon size
-
-// TODO: Fix weather condition text overflow
+// TODO: Find a alternative font
 
 const MainTempDisplay = () => {
   return (
     <div id='main-temp-container'>
+      <p id='main-city-name'>Ribeirão Preto</p>
+      <MostlyCloudyIcon />
       <div id='main-temp-conditions'>
         <div id='main-temperature'>
           <p>77</p>
@@ -19,9 +18,8 @@ const MainTempDisplay = () => {
             <span id='main-degrees'>º</span>
           </p>
         </div>
-        <p id='main-conditions'>Snow</p>
+        <p id='main-conditions'>Thunderstorm</p>
       </div>
-      <MostlyCloudyIcon />
     </div>
   );
 };

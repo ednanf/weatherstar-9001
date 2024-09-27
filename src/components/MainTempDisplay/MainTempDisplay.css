@@ -1,8 +1,23 @@
 /* Comprises both temperature, degree symbol and weather conditions */
 #main-temp-container {
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
     align-items: center;
+}
+
+/* City name */
+#main-city-name {
+    font-family: 'Star4000';
+    font-size: 2rem;
+}
+
+/* Weather icon - it works because the component returns an img anyway*/
+#main-temp-container img {
+    height: auto;
+    width: auto;
+    max-height: 100px;
+    max-width: auto;
 }
 
 /* Temperature - only the number*/
@@ -24,12 +39,4 @@
 #main-conditions {
     font-family: 'Star4000';
     font-size: 2rem;
-}
-
-/* Weather icon - it works because the component returns an img anyway*/
-#main-temp-container img {
-    height: auto;
-    width: auto;
-    max-height: 70px;
-    max-width: auto;
 }
