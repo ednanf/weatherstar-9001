@@ -4,7 +4,7 @@ import './MainTempDisplay.css';
 
 // TODO: Fix weather icon size - 75px ~ 100px
 
-// TODO: Find a alternative font
+// TODO: Find how to remove anything from the name like accents
 
 const MainTempDisplay = () => {
   return (
