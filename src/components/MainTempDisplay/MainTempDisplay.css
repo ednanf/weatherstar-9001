@@ -1,0 +1,14 @@
+#main-temperature {
+    font-family: 'Star4000-Large-Compressed-Numbers';
+    font-size: 40pt;
+    display: flex;
+}
+
+#main-degrees {
+    font-family: 'Arial';
+}
+
+#main-conditions {
+    font-family: 'Star4000-Extended';
+    font-size: 30pt;
+}

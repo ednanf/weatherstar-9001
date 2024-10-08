@@ -17,7 +17,7 @@ const MainTempDisplay = () => {
           </p>
         </div>
         <p id='main-conditions'>Thunderstorm</p>
-        <MostlyCloudyIcon />
+        <MostlyCloudyIcon size='lg' />
       </div>
     </div>
   );

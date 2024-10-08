@@ -24,102 +24,108 @@ import ThunderStormImage from '../assets/WeatherIcons/Thunderstorm.gif';
 import WindImage from '../assets/WeatherIcons/Wind.gif';
 import WintryMixImage from '../assets/WeatherIcons/Wintry-Mix.gif';
 
-export function BlowingSnowIcon() {
-  return <img src={BlowingSnowImage} alt='Blowing Snow' />;
+import './WeatherIcons.css';
+
+interface Props {
+  size: string;
 }
 
-export function ClearCondition() {
-  return <img src={ClearImage} alt='Clear' />;
+export function BlowingSnowIcon({ size }: Props) {
+  return <img src={BlowingSnowImage} alt='Blowing Snow' className={size} />;
 }
 
-export function CloudyIcon() {
-  return <img src={CloudyImage} alt='Cloudy' />;
+export function ClearCondition({ size }: Props) {
+  return <img src={ClearImage} alt='Clear' className={size} />;
 }
 
-export function FogIcon() {
-  return <img src={FogImage} alt='Fog' />;
+export function CloudyIcon({ size }: Props) {
+  return <img src={CloudyImage} alt='Cloudy' className={size} />;
 }
 
-export function FreezingRainSleetIcon() {
-  return <img src={FreezingRainSleetImage} alt='Freezing Rain Sleet' />;
+export function FogIcon({ size }: Props) {
+  return <img src={FogImage} alt='Fog' className={size} />;
 }
 
-export function FreezingRainSnowIcon() {
-  return <img src={FreezingRainSnowImage} alt='Freezing Rain Snow' />;
+export function FreezingRainSleetIcon({ size }: Props) {
+  return <img src={FreezingRainSleetImage} alt='Freezing Rain Sleet' className={size} />;
 }
 
-export function FreezingRainIcon() {
-  return <img src={FreezingRainImage} alt='Freezing Rain' />;
+export function FreezingRainSnowIcon({ size }: Props) {
+  return <img src={FreezingRainSnowImage} alt='Freezing Rain Snow' className={size} />;
 }
 
-export function HeavySnowIcon() {
-  return <img src={HeavySnowImage} alt='Heavy Snow' />;
+export function FreezingRainIcon({ size }: Props) {
+  return <img src={FreezingRainImage} alt='Freezing Rain' className={size} />;
 }
 
-export function LightSnowIcon() {
-  return <img src={LightSnowImage} alt='Light Snow' />;
+export function HeavySnowIcon({ size }: Props) {
+  return <img src={HeavySnowImage} alt='Heavy Snow' className={size} />;
 }
 
-export function MostlyClearIcon() {
-  return <img src={MostlyClearImage} alt='Mostly Clear' />;
+export function LightSnowIcon({ size }: Props) {
+  return <img src={LightSnowImage} alt='Light Snow' className={size} />;
 }
 
-export function MostlyCloudyIcon() {
-  return <img src={MostlyCloudyImage} alt='Mostly Cloudy' />;
+export function MostlyClearIcon({ size }: Props) {
+  return <img src={MostlyClearImage} alt='Mostly Clear' className={size} />;
 }
 
-export function PartlyClearIcon() {
-  return <img src={PartlyClearImage} alt='Partly Clear' />;
+export function MostlyCloudyIcon({ size }: Props) {
+  return <img src={MostlyCloudyImage} alt='Mostly Cloudy' className={size} />;
 }
 
-export function PartlyCloudyIcon() {
-  return <img src={PartlyCloudyImage} alt='Partly Cloudy' />;
+export function PartlyClearIcon({ size }: Props) {
+  return <img src={PartlyClearImage} alt='Partly Clear' className={size} />;
 }
 
-export function RainSleetIcon() {
-  return <img src={RainSleetImage} alt='Rain Sleet' />;
+export function PartlyCloudyIcon({ size }: Props) {
+  return <img src={PartlyCloudyImage} alt='Partly Cloudy' className={size} />;
 }
 
-export function RainSnowIcon() {
-  return <img src={RainSnowImage} alt='Rain Snow' />;
+export function RainSleetIcon({ size }: Props) {
+  return <img src={RainSleetImage} alt='Rain Sleet' className={size} />;
 }
 
-export function RainIcon() {
-  return <img src={RainImage} alt='Rain' />;
+export function RainSnowIcon({ size }: Props) {
+  return <img src={RainSnowImage} alt='Rain Snow' className={size} />;
 }
 
-export function ShowerIcon() {
-  return <img src={ShowerImage} alt='Shower' />;
+export function RainIcon({ size }: Props) {
+  return <img src={RainImage} alt='Rain' className={size} />;
 }
 
-export function SleetIcon() {
-  return <img src={SleetImage} alt='Sleet' />;
+export function ShowerIcon({ size }: Props) {
+  return <img src={ShowerImage} alt='Shower' className={size} />;
 }
 
-export function SnowSleetIcon() {
-  return <img src={SnowSleetImage} alt='Snow Sleet' />;
+export function SleetIcon({ size }: Props) {
+  return <img src={SleetImage} alt='Sleet' className={size} />;
 }
 
-export function SunnyIcon() {
-  return <img src={SunnyImage} alt='Sunny' />;
+export function SnowSleetIcon({ size }: Props) {
+  return <img src={SnowSleetImage} alt='Snow Sleet' className={size} />;
 }
 
-export function ThunderIcon() {
-  return <img src={ThunderImage} alt='Thunder' />;
+export function SunnyIcon({ size }: Props) {
+  return <img src={SunnyImage} alt='Sunny' className={size} />;
 }
 
-export function ThunderSnowIcon() {
-  return <img src={ThunderSnowImage} alt='Thunder Snow' />;
+export function ThunderIcon({ size }: Props) {
+  return <img src={ThunderImage} alt='Thunder' className={size} />;
 }
 
-export function ThunderStormIcon() {
-  return <img src={ThunderStormImage} alt='Thunder Storm' />;
+export function ThunderSnowIcon({ size }: Props) {
+  return <img src={ThunderSnowImage} alt='Thunder Snow' className={size} />;
 }
 
-export function WindIcon() {
-  return <img src={WindImage} alt='Windy' />;
+export function ThunderStormIcon({ size }: Props) {
+  return <img src={ThunderStormImage} alt='Thunder Storm' className={size} />;
 }
 
-export function WintryMixIcon() {
-  return <img src={WintryMixImage} alt='Wintry Mix' />;
+export function WindIcon({ size }: Props) {
+  return <img src={WindImage} alt='Windy' className={size} />;
+}
+
+export function WintryMixIcon({ size }: Props) {
+  return <img src={WintryMixImage} alt='Wintry Mix' className={size} />;
 }
