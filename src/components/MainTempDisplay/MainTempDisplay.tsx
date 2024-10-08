@@ -2,9 +2,10 @@ import { MostlyCloudyIcon } from '../../libraries/WeatherIcons';
 
 import './MainTempDisplay.css';
 
-// TODO: Fix weather icon size - 75px ~ 100px
-
 // TODO: Find how to remove anything from the name like accents
+
+// TODO: Make the main rectangle have a maximum heigh width, and if it is reached,
+// add the bottom blue bar
 
 const MainTempDisplay = () => {
   return (
