@@ -9,8 +9,6 @@ import './MainTempDisplay.css';
 const MainTempDisplay = () => {
   return (
     <div id='main-temp-container'>
-      <p id='main-city-name'>Ribeirão Preto</p>
-      <MostlyCloudyIcon />
       <div id='main-temp-conditions'>
         <div id='main-temperature'>
           <p>77</p>
@@ -19,6 +17,7 @@ const MainTempDisplay = () => {
           </p>
         </div>
         <p id='main-conditions'>Thunderstorm</p>
+        <MostlyCloudyIcon />
       </div>
     </div>
   );
