@@ -3,6 +3,8 @@ import ContentContainer from './components/ContentContainer/ContentContainer';
 
 import './App.css';
 
+const API_KEY = import.meta.env.VITE_WEATHER_KEY;
+
 function App() {
   return (
     <>
