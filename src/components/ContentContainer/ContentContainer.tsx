@@ -1,17 +1,11 @@
-import MainTempDisplay from '../MainTempDisplay/MainTempDisplay';
-import SecondaryTempDisplay from '../SecondaryTempDisplay/SecondaryTempDisplay';
+import CurrentWeatherDisplay from '../CurrentWeatherDisplay/CurrentWeatherDisplay';
 
 import './ContentContainer.css';
 
 const ContentContainer = () => {
   return (
     <div id='content-container'>
-      <div className='content-container-item'>
-        <MainTempDisplay />
-      </div>
-      <div className='content-container-item'>
-        <SecondaryTempDisplay />
-      </div>
+      <CurrentWeatherDisplay />
     </div>
   );
 };
