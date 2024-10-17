@@ -3,7 +3,11 @@ import React from 'react';
 import MainTempDisplay from '../MainTempDisplay/MainTempDisplay';
 import SecondaryTempDisplay from '../SecondaryTempDisplay/SecondaryTempDisplay';
 
-function CurrentWeatherDisplay() {
+interface CurrentWeatherDisplayProps {
+  currentWeatherData: any;
+}
+
+const CurrentWeatherDisplay: React.FC<CurrentWeatherDisplayProps> = () => {
   return (
     <>
       <div className='content-container-item'>
@@ -14,6 +18,6 @@ function CurrentWeatherDisplay() {
       </div>
     </>
   );
-}
+};
 
 export default CurrentWeatherDisplay;
