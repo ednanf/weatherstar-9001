@@ -7,7 +7,7 @@ interface CurrentWeatherDisplayProps {
   currentWeatherData: any;
 }
 
-const CurrentWeatherDisplay: React.FC<CurrentWeatherDisplayProps> = () => {
+const CurrentWeatherDisplay: React.FC<CurrentWeatherDisplayProps> = ({ currentWeatherData }) => {
   return (
     <>
       <div className='content-container-item'>

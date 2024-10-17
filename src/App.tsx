@@ -10,9 +10,36 @@ const API_KEY = import.meta.env.VITE_WEATHER_KEY;
 // TODO: figure how to pass the data to the components, destructuring is not working
 // criar um objeto e distribuir de acordo as propriedas manualmente ao usar o setcurrentweatherdata
 
+interface Coordinates {
+  lat?: number;
+  lon?: number;
+}
+
+interface CurrentWeatherData {
+  weather?: {
+    0: {
+      id: number;
+      main: string;
+      description: string;
+    };
+  };
+  main?: {
+    temp: number;
+    feels_like: number;
+    temp_min: number;
+    temp_max: number;
+    pressure: number;
+    humidity: number;
+  };
+  wind?: {
+    speed: number;
+  };
+  name?: string;
+}
+
 function App() {
-  const [coordinates, setCoordinates] = useState({});
-  const [currentWeatherData, setCurrentWeatherData] = useState({});
+  const [coordinates, setCoordinates] = useState<Coordinates>({});
+  const [currentWeatherData, setCurrentWeatherData] = useState<CurrentWeatherData>({});
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition((position) => {
@@ -37,7 +64,7 @@ function App() {
 
       fetchCurrentWeather();
     }
-  }, [coordinates]);
+  }, [coordinates, currentWeatherData]);
 
   return (
     <>
