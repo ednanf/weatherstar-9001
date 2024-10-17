@@ -7,6 +7,8 @@ import './App.css';
 
 const API_KEY = import.meta.env.VITE_WEATHER_KEY;
 
+// TODO: figure how to pass the data to the components, destructuring is not working
+
 function App() {
   const [coordinates, setCoordinates] = useState({});
   const [currentWeatherData, setCurrentWeatherData] = useState({});
