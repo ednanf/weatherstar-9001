@@ -8,6 +8,7 @@ import './App.css';
 const API_KEY = import.meta.env.VITE_WEATHER_KEY;
 
 // TODO: figure how to pass the data to the components, destructuring is not working
+// criar um objeto e distribuir de acordo as propriedas manualmente ao usar o setcurrentweatherdata
 
 function App() {
   const [coordinates, setCoordinates] = useState({});
