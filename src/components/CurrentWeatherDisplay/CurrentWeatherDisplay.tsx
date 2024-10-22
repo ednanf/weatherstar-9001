@@ -11,7 +11,8 @@ const CurrentWeatherDisplay: React.FC<CurrentWeatherDisplayProps> = ({ currentWe
   return (
     <>
       <div className='content-container-item'>
-        <MainTempDisplay />
+        {/* TODO: remover os opcionais se não funcionar na primeira tentativa */}
+        <MainTempDisplay temp={currentWeatherData?.main?.temp} />
       </div>
       <div className='content-container-item'>
         <SecondaryTempDisplay />

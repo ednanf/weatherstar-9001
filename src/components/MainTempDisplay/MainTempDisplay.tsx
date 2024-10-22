@@ -7,12 +7,16 @@ import './MainTempDisplay.css';
 // TODO: Make the main rectangle have a maximum heigh width, and if it is reached,
 // add the bottom blue bar
 
-const MainTempDisplay = () => {
+interface MainTempDisplayProps {
+  temp: number;
+}
+
+const MainTempDisplay: React.FC<MainTempDisplayProps> = ({ temp }) => {
   return (
     <div id='main-temp-container'>
       <div id='main-temp-conditions'>
         <div id='main-temperature'>
-          <p>77</p>
+          <p>{temp}</p>
           <p>
             <span id='main-degrees'>º</span>
           </p>

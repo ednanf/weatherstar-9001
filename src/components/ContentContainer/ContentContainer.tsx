@@ -11,7 +11,7 @@ interface ContentContainerProps {
 const ContentContainer: React.FC<ContentContainerProps> = ({ currentWeatherData }) => {
   return (
     <div id='content-container'>
-      <CurrentWeatherDisplay />
+      <CurrentWeatherDisplay currentWeatherData={currentWeatherData} />
     </div>
   );
 };
