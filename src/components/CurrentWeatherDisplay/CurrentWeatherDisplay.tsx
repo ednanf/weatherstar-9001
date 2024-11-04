@@ -19,7 +19,13 @@ const CurrentWeatherDisplay: React.FC<CurrentWeatherDisplayProps> = ({ currentWe
         />
       </div>
       <div className='content-container-item'>
-        <SecondaryTempDisplay />
+        <SecondaryTempDisplay
+          city={currentWeatherData?.name}
+          feelsLike={currentWeatherData?.main?.feels_like}
+          wind={currentWeatherData?.wind?.speed}
+          humidity={currentWeatherData?.main?.humidity}
+          pressure={currentWeatherData?.main?.pressure}
+        />
       </div>
     </>
   );

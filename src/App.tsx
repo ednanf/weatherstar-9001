@@ -7,7 +7,7 @@ import './App.css';
 
 const API_KEY = import.meta.env.VITE_WEATHER_KEY;
 
-// criar um objeto e distribuir de acordo as propriedas manualmente ao usar o setcurrentweatherdata
+// TODO: Test and fix any errors when the user denies geolocation permissions.
 
 interface Coordinates {
   lat?: number;
@@ -57,7 +57,7 @@ function App() {
     wind: {
       speed: 0,
     },
-    name: '--',
+    name: 'LOADING...',
   });
 
   useEffect(() => {
