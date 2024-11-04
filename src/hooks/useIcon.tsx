@@ -5,7 +5,6 @@ import {
   LightSnowIcon,
   RainIcon,
   ShowerIcon,
-  ThunderSnowIcon,
   ThunderStormIcon,
   WindIcon,
 } from '../libraries/WeatherIcons';
