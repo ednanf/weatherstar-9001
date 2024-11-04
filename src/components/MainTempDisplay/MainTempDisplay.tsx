@@ -21,7 +21,7 @@ const MainTempDisplay: React.FC<MainTempDisplayProps> = ({ temp }) => {
             <span id='main-degrees'>º</span>
           </p>
         </div>
-        <p id='main-conditions'>Thunderstorm</p>
+        <p id='main-conditions'>description</p>
         <MostlyCloudyIcon size='lg' />
       </div>
     </div>

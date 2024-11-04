@@ -10,7 +10,6 @@ const API_KEY = import.meta.env.VITE_WEATHER_KEY;
 // TODO: figure how to pass the data to the components, destructuring is not working
 // criar um objeto e distribuir de acordo as propriedas manualmente ao usar o setcurrentweatherdata
 
-// FIX: PRIMEIRO VER SE ESTA PASSANDO CORRETAMENTE, NAO DA PRA SABER PQ EU ESTOUREI MINHA COTA
 interface Coordinates {
   lat?: number;
   lon?: number;
@@ -19,7 +18,7 @@ interface Coordinates {
 // TODO: talvez criar um tipo possa atrapalhar, se der problema, tentar remover daqui e do useState
 interface CurrentWeatherData {
   weather?: {
-    0: {
+    poop: {
       id: number;
       main: string;
       description: string;
@@ -47,27 +46,26 @@ function App() {
     navigator.geolocation.getCurrentPosition((position) => {
       setCoordinates({ lat: position.coords.latitude, lon: position.coords.longitude });
     });
+  }, []);
 
+  useEffect(() => {
     async function fetchCurrentWeather() {
-      try {
-        const response = await fetch(
-          `https://api.openweathermap.org/data/2.5/weather?lat=${coordinates.lat}&lon=${coordinates.lon}&units=metric&appid=${API_KEY}`,
-        );
-        const data = await response.json();
-        setCurrentWeatherData({ ...data });
-      } catch (error) {
-        console.log(error);
+      if (coordinates && Object.keys(coordinates).length > 0) {
+        try {
+          console.log(`Coordinates to be passed: ${JSON.stringify(coordinates)}`);
+          const response = await fetch(
+            `https://api.openweathermap.org/data/2.5/weather?lat=${coordinates.lat}&lon=${coordinates.lon}&units=metric&appid=${API_KEY}`,
+          );
+          const data = await response.json();
+          setCurrentWeatherData({ ...data });
+        } catch (error) {
+          console.log(error);
+        }
       }
     }
 
     fetchCurrentWeather();
-  }, []);
-
-  //   useEffect(() => {
-  //     // First check if coordinates have any content
-  //     if (coordinates && Object.keys(coordinates).length > 0) {
-  //     }
-  //   }, [coordinates, currentWeatherData]);
+  }, [coordinates]);
 
   return (
     <>
