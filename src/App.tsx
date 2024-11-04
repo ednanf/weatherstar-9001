@@ -17,13 +17,13 @@ interface Coordinates {
 
 // TODO: talvez criar um tipo possa atrapalhar, se der problema, tentar remover daqui e do useState
 interface CurrentWeatherData {
-  weather?: {
-    poop: {
+  weather?: [
+    {
       id: number;
       main: string;
       description: string;
-    };
-  };
+    },
+  ];
   main?: {
     temp: number;
     feels_like: number;
@@ -66,6 +66,8 @@ function App() {
 
     fetchCurrentWeather();
   }, [coordinates]);
+
+  console.log(currentWeatherData);
 
   return (
     <>
