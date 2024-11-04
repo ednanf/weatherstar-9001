@@ -9,9 +9,10 @@ import './MainTempDisplay.css';
 
 interface MainTempDisplayProps {
   temp: number;
+  desc: string;
 }
 
-const MainTempDisplay: React.FC<MainTempDisplayProps> = ({ temp }) => {
+const MainTempDisplay: React.FC<MainTempDisplayProps> = ({ temp, desc }) => {
   return (
     <div id='main-temp-container'>
       <div id='main-temp-conditions'>
@@ -21,7 +22,7 @@ const MainTempDisplay: React.FC<MainTempDisplayProps> = ({ temp }) => {
             <span id='main-degrees'>º</span>
           </p>
         </div>
-        <p id='main-conditions'>description</p>
+        <p id='main-conditions'>{desc}</p>
         <MostlyCloudyIcon size='lg' />
       </div>
     </div>

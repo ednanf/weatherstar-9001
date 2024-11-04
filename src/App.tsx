@@ -40,7 +40,27 @@ interface CurrentWeatherData {
 
 function App() {
   const [coordinates, setCoordinates] = useState<Coordinates>({});
-  const [currentWeatherData, setCurrentWeatherData] = useState<CurrentWeatherData>({});
+  const [currentWeatherData, setCurrentWeatherData] = useState<CurrentWeatherData>({
+    weather: [
+      {
+        'id': 0,
+        main: '--',
+        description: '--',
+      },
+    ],
+    main: {
+      temp: 0,
+      feels_like: 0,
+      temp_min: 0,
+      temp_max: 0,
+      pressure: 0,
+      humidity: 0,
+    },
+    wind: {
+      speed: 0,
+    },
+    name: '--',
+  });
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition((position) => {
@@ -52,7 +72,6 @@ function App() {
     async function fetchCurrentWeather() {
       if (coordinates && Object.keys(coordinates).length > 0) {
         try {
-          console.log(`Coordinates to be passed: ${JSON.stringify(coordinates)}`);
           const response = await fetch(
             `https://api.openweathermap.org/data/2.5/weather?lat=${coordinates.lat}&lon=${coordinates.lon}&units=metric&appid=${API_KEY}`,
           );
@@ -66,8 +85,6 @@ function App() {
 
     fetchCurrentWeather();
   }, [coordinates]);
-
-  console.log(currentWeatherData);
 
   return (
     <>
