@@ -65,7 +65,7 @@ function useIcon(id: number, size: string) {
       // cloudy
       return <CloudyIcon size={size} />;
     default:
-      return <ThunderSnowIcon size={size} />;
+      return <h2>--</h2>;
   }
 }
 export { useIcon };
