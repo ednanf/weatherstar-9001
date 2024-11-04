@@ -1,5 +1,4 @@
-import { MostlyCloudyIcon } from '../../libraries/WeatherIcons';
-
+import { useIcon } from '../../hooks/useIcon';
 import './MainTempDisplay.css';
 
 // TODO: Find how to remove anything from the name like accents
@@ -10,20 +9,21 @@ import './MainTempDisplay.css';
 interface MainTempDisplayProps {
   temp: number;
   desc: string;
+  iconCode: number;
 }
 
-const MainTempDisplay: React.FC<MainTempDisplayProps> = ({ temp, desc }) => {
+const MainTempDisplay: React.FC<MainTempDisplayProps> = ({ temp, desc, iconCode }) => {
   return (
     <div id='main-temp-container'>
       <div id='main-temp-conditions'>
         <div id='main-temperature'>
-          <p>{temp}</p>
+          <p>{Math.ceil(temp)}</p>
           <p>
             <span id='main-degrees'>º</span>
           </p>
         </div>
         <p id='main-conditions'>{desc}</p>
-        <MostlyCloudyIcon size='lg' />
+        {useIcon(iconCode, 'lg')}
       </div>
     </div>
   );
