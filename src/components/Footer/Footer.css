@@ -1,0 +1,12 @@
+#footer-border {
+    background-color: white;
+    height: 1vh;
+    border-top: 0.6vh solid black
+}
+
+#footer {
+    height: 20vh;
+    width: 100vw;
+    background-color: #1c0a57;
+    color: white;
+}
