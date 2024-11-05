@@ -10,3 +10,13 @@
     background-color: #1c0a57;
     color: white;
 }
+
+@media screen and (max-width: 560px) {
+    #footer {
+        display: none;
+    }
+
+    #footer-border {
+        display: none;
+    }
+}

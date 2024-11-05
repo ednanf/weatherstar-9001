@@ -1,5 +1,7 @@
 import './Footer.css';
 
+// TODO: adjust the blue color!
+
 const Footer = () => {
   return (
     <>

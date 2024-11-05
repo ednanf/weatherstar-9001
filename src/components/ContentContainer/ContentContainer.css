@@ -17,3 +17,9 @@
         grid-template-columns: repeat(2, 1fr);
     }
 }
+
+@media screen and (max-width: 560px) {
+    #content-container {
+        height: 80vh;
+    }
+}
