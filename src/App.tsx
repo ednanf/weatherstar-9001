@@ -9,6 +9,7 @@ import './App.css';
 const API_KEY = import.meta.env.VITE_WEATHER_KEY;
 
 // TODO: Test and fix any errors when the user denies geolocation permissions.
+// TODO: Add clock to the top right corner of the page and check api calls.
 
 interface Coordinates {
   lat?: number;
