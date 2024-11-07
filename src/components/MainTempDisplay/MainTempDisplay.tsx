@@ -15,12 +15,10 @@ const MainTempDisplay: React.FC<MainTempDisplayProps> = ({ temp, desc, iconCode 
       <div id='main-temp-conditions'>
         <div id='main-temperature'>
           <p>{Math.ceil(temp)}</p>
-          <p>
-            <span id='main-degrees'>º</span>
-          </p>
+          <span id='main-degrees'>º</span>
         </div>
         <p id='main-conditions'>{desc}</p>
-        {useIcon(iconCode, 'lg')}
+        <div id='main-weather-icon'>{useIcon(iconCode, 'lg')}</div>
       </div>
     </div>
   );

@@ -1,7 +1,13 @@
+#main-temp-container {
+    display: flex;
+    justify-content: center;
+}
+
 #main-temperature {
     font-family: 'Star4000-Large-Compressed-Numbers';
-    font-size: 40pt;
+    font-size: 10vmin;
     display: flex;
+    justify-content: center;
 }
 
 #main-degrees {
@@ -10,5 +16,21 @@
 
 #main-conditions {
     font-family: 'Star4000-Extended';
-    font-size: 30pt;
+    font-size: 7vmin;
+    margin-bottom: 10px;
+}
+
+#main-weather-icon {
+    display: flex;
+    justify-content: center;
+}
+
+#main-weather-icon img {
+    height: 20vmin;
+}
+
+@media screen and (max-width: 560px) {
+    #main-temperature {
+        font-size: 40pt
+    }
 }
