@@ -1,0 +1,15 @@
+#secondary-temp-container {
+    height: 100%;
+}
+
+#secondary-city {
+    margin-bottom: 1vh;
+    font-family: "Star4000";
+    font-size: 5vmin;
+    color: rgb(208, 189, 49);
+}
+
+#secondary-data {
+    font-family: "Star4000";
+    font-size: 3.5vmin;
+}
