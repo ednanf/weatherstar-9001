@@ -1,5 +1,7 @@
 import React from 'react';
 
+import useTextNormalization from '../../hooks/useTextNormalization';
+
 import './SecondaryTempDisplay.css';
 
 interface SecondaryTempDisplayProps {
@@ -11,14 +13,10 @@ interface SecondaryTempDisplayProps {
 }
 
 const SecondaryTempDisplay: React.FC<SecondaryTempDisplayProps> = ({ city, feelsLike, wind, humidity, pressure }) => {
-  function removeAccents(word: String) {
-    return word.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-  }
-
   return (
     <div id='secondary-temp-container'>
       <div id='secondary-city'>
-        <p>{removeAccents(city)}</p>
+        <p>{useTextNormalization(city)}</p>
       </div>
       <div id='secondary-data'>
         <p>Feels like: {Math.ceil(feelsLike)}°C</p>
