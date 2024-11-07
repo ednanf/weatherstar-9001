@@ -1,13 +1,13 @@
 #footer-border {
-    background-color: white;
-    height: 1vh;
-    border-top: 0.6vh solid black
+    background-color: #afafaf;
+    height: 0.6vh;
+    border-top: 0.3vh solid black
 }
 
 #footer {
-    height: 20vh;
+    height: 18.4vh;
     width: 100vw;
-    background-color: #1c0a57;
+    background-color: #24346d;
     color: white;
 }
 
