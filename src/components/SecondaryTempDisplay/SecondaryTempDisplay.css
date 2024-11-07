@@ -14,3 +14,7 @@
     font-size: 3.5vmin;
     margin-left: 5%;
 }
+
+#secondary-data p {
+    margin-bottom: 10px;
+}

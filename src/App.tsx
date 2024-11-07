@@ -77,7 +77,7 @@ function App() {
           const response = await fetch(
             `https://api.openweathermap.org/data/2.5/weather?lat=${coordinates.lat}&lon=${coordinates.lon}&units=metric&appid=${API_KEY}`,
           );
-          console.log(`${consoleDate.toTimeString().split(' ')[0]}: Fetched data!`);
+          console.log(`[${consoleDate.toTimeString().split(' ')[0]}]: Fetched data!`);
           const data = await response.json();
           setCurrentWeatherData({ ...data });
         } catch (error) {
