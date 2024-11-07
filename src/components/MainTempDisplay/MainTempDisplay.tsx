@@ -1,8 +1,6 @@
 import { useIcon } from '../../hooks/useIcon';
 import './MainTempDisplay.css';
 
-// TODO: Find how to remove anything from the name like accents
-
 interface MainTempDisplayProps {
   temp: number;
   desc: string;
