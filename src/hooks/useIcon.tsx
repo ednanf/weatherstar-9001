@@ -2,9 +2,17 @@ import {
   ClearCondition,
   CloudyIcon,
   FogIcon,
+  FreezingRainIcon,
+  FreezingRainSnowIcon,
+  HeavySnowIcon,
   LightSnowIcon,
+  MostlyCloudyIcon,
   RainIcon,
+  RainSnowIcon,
   ShowerIcon,
+  SleetIcon,
+  SunnyIcon,
+  ThunderSnowIcon,
   ThunderStormIcon,
   WindIcon,
 } from '../libraries/WeatherIcons';
@@ -15,56 +23,57 @@ type useIcon = {
 
 function useIcon(id: number, size: string) {
   switch (true) {
-    case id >= 200 && id <= 232:
-      // thunderstorm
-      return <ThunderStormIcon size={size} />;
-    case id >= 300 && id <= 321:
-      // drizzle
-      return <ShowerIcon size={size} />;
-    case id >= 500 && id <= 531:
-      //rain
-      return <RainIcon size={size} />;
-    case id >= 600 && id <= 622:
-      // snow
-      return <LightSnowIcon size={size} />;
-    case id === 701:
-      // mist
-      return <FogIcon size={size} />;
-    case id === 711:
-      // smoke
-      return <FogIcon size={size} />;
-    case id === 721:
-      // haze
-      return <FogIcon size={size} />;
-    case id === 731:
-      // dust
-      return <FogIcon size={size} />;
-    case id === 741:
-      // fog
-      return <FogIcon size={size} />;
-    case id === 751:
-      // sand
-      return <WindIcon size={size} />;
-    case id === 761:
-      // dust
-      return <WindIcon size={size} />;
-    case id === 762:
-      // ash
-      return <WindIcon size={size} />;
-    case id === 771:
-      // squall
-      return <WindIcon size={size} />;
-    case id === 781:
-      // tornado
-      return <WindIcon size={size} />;
-    case id === 800:
-      // clear
-      return <ClearCondition size={size} />;
-    case id >= 801 && id <= 804:
-      // cloudy
+    // clear sky
+    case id === 0:
+      return <SunnyIcon size={size} />;
+    // mainly clear
+    case id === 1:
+      return <SunnyIcon size={size} />;
+    // partly cloudy
+    case id === 2:
       return <CloudyIcon size={size} />;
+    // mostly cloudy (overcast)
+    case id === 3:
+      return <MostlyCloudyIcon size={size} />;
+    // fog (fog, depositing rime fog)
+    case id === 45 || id === 48:
+      return <FogIcon size={size} />;
+    // drizzle (light, moderate, dense)
+    case id === 51 || id === 53 || id === 55:
+      return <ShowerIcon size={size} />;
+    // freezing drizzle (light, dense)
+    case id === 56 || id === 57:
+      return <FreezingRainIcon size={size} />;
+    // rain (slight, moderate, heavy)
+    case id === 61 || id === 63 || id === 65:
+      return <RainIcon size={size} />;
+    // freezing rain (light, heavy)
+    case id === 66 || id === 67:
+      return <FreezingRainIcon size={size} />;
+    // snow fall (slight)
+    case id === 71:
+      return <LightSnowIcon size={size} />;
+    // light snow  (moderate, heavy)
+    case id === 73 || id === 75:
+      return <HeavySnowIcon size={size} />;
+    // snow grains
+    case id === 77:
+      return <SleetIcon size={size} />;
+    // rain showers (slight, moderate, heavy)
+    case id === 80 || id === 81 || id === 82:
+      return <ShowerIcon size={size} />;
+    // snow showers (slight, heavy)
+    case id === 85 || id === 86:
+      return <RainSnowIcon size={size} />;
+    // thunderstorm (slight, moderate)
+    case id === 95:
+      return <ThunderStormIcon size={size} />;
+    // thunderstorm with slight or heavy hail
+    case id === 96 || id === 99:
+      return <ThunderSnowIcon size={size} />;
+    // default case / error handling
     default:
-      return <h2>--</h2>;
+      return <p>--</p>;
   }
 }
 export { useIcon };
