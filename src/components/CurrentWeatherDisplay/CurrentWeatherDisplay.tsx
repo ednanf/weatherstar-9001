@@ -8,10 +8,8 @@ interface WeatherDisplayProps {
   cityName: string;
 }
 
-// TODO: how to reuse a type declaration from another file
-
 const CurrentWeatherDisplay: React.FC<WeatherDisplayProps> = ({ weatherData, cityName }) => {
-  console.log(weatherData.hourly.apparent_temperature[0]);
+  //   console.log(weatherData.hourly.relative_humidity_2m[0]);
   return (
     <>
       <div className='content-container-item'>

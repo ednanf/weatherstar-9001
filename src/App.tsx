@@ -26,7 +26,7 @@ interface WeatherData {
   hourly_units: {
     time: string;
     temperature_2m: string;
-    relative_humidity: string;
+    relative_humidity_2m: string;
     dew_point_2m: string;
     precipitation_probability: string;
     apparent_temperature: string;
@@ -41,7 +41,7 @@ interface WeatherData {
     time: string[];
     temperature_2m?: number[];
     apparent_temperature: number[];
-    relative_humidity?: number[];
+    relative_humidity_2m?: number[];
     dew_point_2m?: number[];
     precipitation_probability?: number[];
     weather_code?: number[];
@@ -66,7 +66,7 @@ function App() {
     hourly_units: {
       time: '--',
       temperature_2m: '--',
-      relative_humidity: '--',
+      relative_humidity_2m: '--',
       dew_point_2m: '--',
       precipitation_probability: '--',
       apparent_temperature: '--',
@@ -81,7 +81,7 @@ function App() {
       time: [],
       temperature_2m: [],
       apparent_temperature: [],
-      relative_humidity: [],
+      relative_humidity_2m: [],
       dew_point_2m: [],
       precipitation_probability: [],
       weather_code: [],
