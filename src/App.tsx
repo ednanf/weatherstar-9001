@@ -29,6 +29,7 @@ interface WeatherData {
     relative_humidity: string;
     dew_point_2m: string;
     precipitation_probability: string;
+    apparent_temperature: string;
     weather_code: string;
     surface_pressure: string;
     visibility: string;
@@ -39,6 +40,7 @@ interface WeatherData {
   hourly: {
     time: string[];
     temperature_2m?: number[];
+    apparent_temperature: number[];
     relative_humidity?: number[];
     dew_point_2m?: number[];
     precipitation_probability?: number[];
@@ -53,7 +55,7 @@ interface WeatherData {
 
 function App() {
   const [coordinates, setCoordinates] = useState<Coordinates>({});
-  const [cityName, setCityName] = useState<string>('');
+  const [cityName, setCityName] = useState('--');
   const [weatherData, setWeatherData] = useState<WeatherData>({
     latitude: 0,
     longitude: 0,
@@ -67,6 +69,7 @@ function App() {
       relative_humidity: '--',
       dew_point_2m: '--',
       precipitation_probability: '--',
+      apparent_temperature: '--',
       weather_code: '--',
       surface_pressure: '--',
       visibility: '--',
@@ -77,6 +80,7 @@ function App() {
     hourly: {
       time: [],
       temperature_2m: [],
+      apparent_temperature: [],
       relative_humidity: [],
       dew_point_2m: [],
       precipitation_probability: [],
@@ -88,9 +92,6 @@ function App() {
       wind_gusts_10m: [],
     },
   });
-
-  // TODO: Remove this const and the console log.
-  const consoleDate = new Date();
 
   // Get current geolocation coordinates.
   useEffect(() => {
@@ -108,14 +109,12 @@ function App() {
             `http://api.openweathermap.org/geo/1.0/reverse?lat=${coordinates.lat}&lon=${coordinates.lon}&limit=1&appid=${LOCATION_API_KEY}`,
           );
           const data = await response.json();
-          setCityName(data[0].name);
+          setCityName(data[0]?.name);
         } catch (error) {
           console.log('Error: ', error);
         }
       }
     }
-
-    console.log(`[${consoleDate.toTimeString().split(' ')[0]}]: Fetched openweather data!`);
 
     fetchCurrentCity();
   }, [coordinates]);
@@ -126,7 +125,7 @@ function App() {
       if (coordinates && Object.keys(coordinates).length > 0) {
         try {
           const response = await fetch(
-            `https://api.open-meteo.com/v1/forecast?latitude=${coordinates.lat}&longitude=${coordinates.lon}&hourly=temperature_2m,relative_humidity_2m,dew_point_2m,precipitation_probability,weather_code,surface_pressure,visibility,wind_speed_10m,wind_direction_10m,wind_gusts_10m&timezone=auto`,
+            `https://api.open-meteo.com/v1/forecast?latitude=${coordinates.lat}&longitude=${coordinates.lon}&hourly=temperature_2m,relative_humidity_2m,dew_point_2m,apparent_temperature,precipitation_probability,weather_code,surface_pressure,visibility,wind_speed_10m,wind_direction_10m,wind_gusts_10m&timezone=auto`,
           );
           const data = await response.json();
           setWeatherData({ ...data });

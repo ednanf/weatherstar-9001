@@ -11,7 +11,7 @@ interface WeatherDisplayProps {
 // TODO: how to reuse a type declaration from another file
 
 const CurrentWeatherDisplay: React.FC<WeatherDisplayProps> = ({ weatherData, cityName }) => {
-  //   console.log(weatherData.hourly.weather_code[0]);
+  console.log(weatherData.hourly.apparent_temperature[0]);
   return (
     <>
       <div className='content-container-item'>
@@ -22,7 +22,13 @@ const CurrentWeatherDisplay: React.FC<WeatherDisplayProps> = ({ weatherData, cit
         />
       </div>
       <div className='content-container-item'>
-        {/* <SecondaryTempDisplay city={cityName} feelsLike={} wind={} humidity={} pressure={} /> */}
+        <SecondaryTempDisplay
+          city={cityName}
+          feelsLike={weatherData.hourly.apparent_temperature[0]}
+          wind={weatherData.hourly.wind_speed_10m[0]}
+          humidity={weatherData.hourly.relative_humidity_2m[0]}
+          pressure={weatherData.hourly.surface_pressure[0]}
+        />
       </div>
     </>
   );
