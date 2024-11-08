@@ -5,13 +5,14 @@ import CurrentWeatherDisplay from '../CurrentWeatherDisplay/CurrentWeatherDispla
 import './ContentContainer.css';
 
 interface ContentContainerProps {
-  currentWeatherData: any;
+  weatherData: object;
+  cityName: string;
 }
 
-const ContentContainer: React.FC<ContentContainerProps> = ({ currentWeatherData }) => {
+const ContentContainer: React.FC<ContentContainerProps> = ({ weatherData, cityName }) => {
   return (
     <div id='content-container'>
-      <CurrentWeatherDisplay currentWeatherData={currentWeatherData} />
+      <CurrentWeatherDisplay weatherData={weatherData} cityName={cityName} />
     </div>
   );
 };

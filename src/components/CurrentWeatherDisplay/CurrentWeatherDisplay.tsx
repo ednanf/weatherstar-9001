@@ -3,28 +3,26 @@ import React from 'react';
 import MainTempDisplay from '../MainTempDisplay/MainTempDisplay';
 import SecondaryTempDisplay from '../SecondaryTempDisplay/SecondaryTempDisplay';
 
-interface CurrentWeatherDisplayProps {
-  currentWeatherData: any;
+interface WeatherDisplayProps {
+  weatherData: any;
+  cityName: string;
 }
 
-const CurrentWeatherDisplay: React.FC<CurrentWeatherDisplayProps> = ({ currentWeatherData }) => {
+// TODO: how to reuse a type declaration from another file
+
+const CurrentWeatherDisplay: React.FC<WeatherDisplayProps> = ({ weatherData, cityName }) => {
+  console.log(weatherData.hourly.weather_code[0]);
   return (
     <>
       <div className='content-container-item'>
         <MainTempDisplay
-          temp={currentWeatherData?.main?.temp}
-          desc={currentWeatherData?.weather[0]?.description}
-          iconCode={currentWeatherData?.weather[0]?.id}
+          temp={weatherData.hourly.temperature_2m[0]}
+          desc={weatherData.hourly.weather_code[0]}
+          iconCode={weatherData.hourly.weather_code[0]}
         />
       </div>
       <div className='content-container-item'>
-        <SecondaryTempDisplay
-          city={currentWeatherData?.name}
-          feelsLike={currentWeatherData?.main?.feels_like}
-          wind={currentWeatherData?.wind?.speed}
-          humidity={currentWeatherData?.main?.humidity}
-          pressure={currentWeatherData?.main?.pressure}
-        />
+        {/* <SecondaryTempDisplay city={cityName} feelsLike={} wind={} humidity={} pressure={} /> */}
       </div>
     </>
   );
