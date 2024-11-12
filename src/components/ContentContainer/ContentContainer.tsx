@@ -10,9 +10,11 @@ interface ContentContainerProps {
 }
 
 const ContentContainer: React.FC<ContentContainerProps> = ({ weatherData, cityName }) => {
+  const memoizedWeatherData = React.useMemo(() => weatherData, [weatherData]);
+
   return (
     <div id='content-container'>
-      <CurrentWeatherDisplay weatherData={weatherData} cityName={cityName} />
+      <CurrentWeatherDisplay weatherData={memoizedWeatherData} cityName={cityName} />
     </div>
   );
 };
