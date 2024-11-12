@@ -12,8 +12,8 @@ const LOCATION_API_KEY = import.meta.env.VITE_LOCATION_KEY;
 // TODO: Add clock to the top right corner of the page and check api calls.
 
 interface Coordinates {
-  lat?: number;
-  lon?: number;
+  lat?: number | string;
+  lon?: number | string;
 }
 
 interface WeatherData {
@@ -95,9 +95,11 @@ function App() {
 
   // Get current geolocation coordinates.
   useEffect(() => {
-    navigator.geolocation.getCurrentPosition((position) => {
-      setCoordinates({ lat: position.coords.latitude, lon: position.coords.longitude });
-    });
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition((position) => {
+        setCoordinates({ lat: position.coords.latitude, lon: position.coords.longitude });
+      });
+    }
   }, []);
 
   // Get current city by coordinates.

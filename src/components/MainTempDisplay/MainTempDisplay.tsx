@@ -1,3 +1,4 @@
+import React from 'react';
 import { useIcon } from '../../hooks/useIcon';
 import useConditionCode from '../../hooks/useConditionCode';
 import useCapitalizeFirstLetter from '../../hooks/useCapitalizeFirstLetter';
@@ -10,7 +11,7 @@ interface MainTempDisplayProps {
   iconCode: number;
 }
 
-const MainTempDisplay: React.FC<MainTempDisplayProps> = ({ temp, desc, iconCode }) => {
+const MainTempDisplay: React.FC<MainTempDisplayProps> = React.memo(({ temp, desc, iconCode }) => {
   return (
     <div id='main-temp-container'>
       <div id='main-temp-conditions'>
@@ -23,6 +24,6 @@ const MainTempDisplay: React.FC<MainTempDisplayProps> = ({ temp, desc, iconCode 
       </div>
     </div>
   );
-};
+});
 
-export default MainTempDisplay;
+export default React.memo(MainTempDisplay);

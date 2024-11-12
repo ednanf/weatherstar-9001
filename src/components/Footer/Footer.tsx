@@ -1,14 +1,14 @@
+import React from 'react';
+
 import './Footer.css';
 
-// TODO: adjust the blue color!
-
-const Footer = () => {
+const Footer = React.memo(() => {
   return (
     <>
       <div id='footer-border'></div>
       <div id='footer'></div>
     </>
   );
-};
+});
 
 export default Footer;
