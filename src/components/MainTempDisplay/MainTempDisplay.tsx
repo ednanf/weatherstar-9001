@@ -18,7 +18,7 @@ const MainTempDisplay: React.FC<MainTempDisplayProps> = ({ temp, desc, iconCode 
           <p>{Math.ceil(temp)}</p>
           <span id='main-degrees'>º</span>
         </div>
-        <p id='main-conditions'>{desc ? useCapitalizeFirstLetter(useConditionCode(desc)) : '--'}</p>
+        <p id='main-conditions'>{useCapitalizeFirstLetter(useConditionCode(desc))}</p>
         <div id='main-weather-icon'>{useIcon(iconCode, 'lg')}</div>
       </div>
     </div>
