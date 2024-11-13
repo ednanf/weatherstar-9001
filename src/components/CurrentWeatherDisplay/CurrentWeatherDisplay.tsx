@@ -3,27 +3,29 @@ import React from 'react';
 import MainTempDisplay from '../MainTempDisplay/MainTempDisplay';
 import SecondaryTempDisplay from '../SecondaryTempDisplay/SecondaryTempDisplay';
 
-interface CurrentWeatherDisplayProps {
-  currentWeatherData: any;
+interface WeatherDisplayProps {
+  weatherData: any;
+  cityName: string;
 }
 
-const CurrentWeatherDisplay: React.FC<CurrentWeatherDisplayProps> = ({ currentWeatherData }) => {
+const CurrentWeatherDisplay: React.FC<WeatherDisplayProps> = ({ weatherData, cityName }) => {
+  //   console.log(weatherData.hourly.relative_humidity_2m[0]);
   return (
     <>
       <div className='content-container-item'>
         <MainTempDisplay
-          temp={currentWeatherData?.main?.temp}
-          desc={currentWeatherData?.weather[0]?.description}
-          iconCode={currentWeatherData?.weather[0]?.id}
+          temp={weatherData.hourly.temperature_2m[0]}
+          desc={weatherData.hourly.weather_code[0]}
+          iconCode={weatherData.hourly.weather_code[0]}
         />
       </div>
       <div className='content-container-item'>
         <SecondaryTempDisplay
-          city={currentWeatherData?.name}
-          feelsLike={currentWeatherData?.main?.feels_like}
-          wind={currentWeatherData?.wind?.speed}
-          humidity={currentWeatherData?.main?.humidity}
-          pressure={currentWeatherData?.main?.pressure}
+          city={cityName}
+          feelsLike={weatherData.hourly.apparent_temperature[0]}
+          wind={weatherData.hourly.wind_speed_10m[0]}
+          humidity={weatherData.hourly.relative_humidity_2m[0]}
+          pressure={weatherData.hourly.surface_pressure[0]}
         />
       </div>
     </>

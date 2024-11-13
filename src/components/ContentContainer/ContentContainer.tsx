@@ -1,17 +1,20 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 
 import CurrentWeatherDisplay from '../CurrentWeatherDisplay/CurrentWeatherDisplay';
 
 import './ContentContainer.css';
 
 interface ContentContainerProps {
-  currentWeatherData: any;
+  weatherData: object;
+  cityName: string;
 }
 
-const ContentContainer: React.FC<ContentContainerProps> = ({ currentWeatherData }) => {
+const ContentContainer: React.FC<ContentContainerProps> = ({ weatherData, cityName }) => {
+  const memoizedWeatherData = useMemo(() => weatherData, [weatherData]);
+
   return (
     <div id='content-container'>
-      <CurrentWeatherDisplay currentWeatherData={currentWeatherData} />
+      <CurrentWeatherDisplay weatherData={memoizedWeatherData} cityName={cityName} />
     </div>
   );
 };
