@@ -3,12 +3,13 @@ import { useState, useEffect } from 'react';
 import Header from './components/Header/Header';
 import ContentContainer from './components/ContentContainer/ContentContainer';
 import Footer from './components/Footer/Footer';
+import Clock from './components/Clock/Clock';
 
 import './App.css';
 
 const LOCATION_API_KEY = import.meta.env.VITE_LOCATION_KEY;
 
-// TODO: Test and fix any errors when the user denies geolocation permissions.
+// TODO: Error handling when the user denies geolocation permissions.
 // TODO: Add clock to the top right corner of the page and check api calls.
 
 interface Coordinates {
@@ -167,6 +168,7 @@ function App() {
       </header>
       <main>
         <ContentContainer weatherData={weatherData} cityName={cityName} />
+        <Clock />
       </main>
       <footer>
         <Footer />
