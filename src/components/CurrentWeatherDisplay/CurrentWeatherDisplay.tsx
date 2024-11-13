@@ -24,9 +24,10 @@ const CurrentWeatherDisplay: React.FC<WeatherDisplayProps> = ({ weatherData, cit
       <div className='content-container-item'>
         <SecondaryTempDisplay
           city={cityName}
+          feelsLike={weatherData.hourly.apparent_temperature[0]}
           humidity={weatherData.hourly.relative_humidity_2m[0]}
           dewpoint={weatherData.hourly.dew_point_2m[0]}
-          feelsLike={weatherData.hourly.apparent_temperature[0]}
+          visibility={weatherData.hourly.visibility[0]}
           pressure={weatherData.hourly.surface_pressure[0]}
         />
       </div>

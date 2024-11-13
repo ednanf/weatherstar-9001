@@ -1,22 +1,25 @@
 import React from 'react';
 
 import useTextNormalization from '../../hooks/useTextNormalization';
+import { useConvertToKm } from '../../hooks/convertToMetric';
 
 import './SecondaryTempDisplay.css';
 
 interface SecondaryTempDisplayProps {
   city: string;
+  feelsLike: number;
   humidity: number;
   dewpoint: number;
-  feelsLike: number;
+  visibility: number;
   pressure: number;
 }
 
 const SecondaryTempDisplay: React.FC<SecondaryTempDisplayProps> = ({
   city,
+  feelsLike,
   humidity,
   dewpoint,
-  feelsLike,
+  visibility,
   pressure,
 }) => {
   return (
@@ -25,9 +28,10 @@ const SecondaryTempDisplay: React.FC<SecondaryTempDisplayProps> = ({
         <p>{useTextNormalization(city)}</p>
       </div>
       <div id='secondary-data'>
+        <p>Feels like: {Math.ceil(feelsLike)}°C</p>
         <p>Humidity: {Math.floor(humidity)}%</p>
         <p>Dewpoint: {dewpoint}°C</p>
-        <p>Feels like: {Math.ceil(feelsLike)}°C</p>
+        <p>Visibility: {useConvertToKm(visibility)}</p>
         <p>Pressure: {pressure} hPa</p>
       </div>
     </div>
