@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react';
 import Header from './components/Header/Header';
 import ContentContainer from './components/ContentContainer/ContentContainer';
 import Footer from './components/Footer/Footer';
-import Clock from './components/Clock/Clock';
 
 import './App.css';
 
@@ -164,11 +163,12 @@ function App() {
   return (
     <>
       <header>
-        <Header />
+        <div>
+          <Header />
+        </div>
       </header>
       <main>
         <ContentContainer weatherData={weatherData} cityName={cityName} />
-        <Clock />
       </main>
       <footer>
         <Footer />
