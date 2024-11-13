@@ -93,7 +93,15 @@ function App() {
     },
   });
 
-  // Get current geolocation coordinates.
+  /**
+   * This effect runs once when the component mounts and uses the browser's Geolocation API to retrieve the user's current coordinates.
+   * It sets the retrieved latitude and longitude into the state using the `setCoordinates` function.
+   *
+   * @effect
+   * @param {Array} [] - An empty dependency array, meaning this effect runs only once after the initial render.
+   * @param {Function} useEffect - The React hook from which this custom hook is derived.
+   * @returns {void}
+   */
   useEffect(() => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition((position) => {
@@ -102,7 +110,13 @@ function App() {
     }
   }, []);
 
-  // Get current city by coordinates.
+  /**
+   * useEffect Hook to fetch and set the current city name based on given coordinates.
+   * @param {Object} coordinates - An object containing latitude and longitude properties.
+   * @param {number} coordinates.lat - The latitude coordinate.
+   * @param {number} coordinates.lon - The longitude coordinate.
+   * @param {string} LOCATION_API_KEY - The API key for the OpenWeatherMap service.
+   */
   useEffect(() => {
     async function fetchCurrentCity() {
       if (coordinates && Object.keys(coordinates).length > 0) {
@@ -121,7 +135,13 @@ function App() {
     fetchCurrentCity();
   }, [coordinates]);
 
-  // Get weather forecast when the page loads or coordinates change.
+  /**
+   * Performs an asynchronous fetch to retrieve current weather data based on given coordinates.
+   *
+   * @function useEffect
+   * @param {Function} fetchCurrentWeather - The async function responsible for fetching the weather data.
+   * @returns {void}
+   */
   useEffect(() => {
     async function fetchCurrentWeather() {
       if (coordinates && Object.keys(coordinates).length > 0) {
