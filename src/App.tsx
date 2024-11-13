@@ -12,8 +12,8 @@ const LOCATION_API_KEY = import.meta.env.VITE_LOCATION_KEY;
 // TODO: Add clock to the top right corner of the page and check api calls.
 
 interface Coordinates {
-  lat?: number | string;
-  lon?: number | string;
+  lat?: number;
+  lon?: number;
 }
 
 interface WeatherData {

@@ -1,10 +1,10 @@
-import React from 'react';
+import { memo } from 'react';
 
 import Logo from '../../assets/logo.webp';
 
 import './Header.css';
 
-const Header = React.memo(() => {
+const Header = memo(() => {
   return (
     <div id='header-container'>
       <div id='header-bar'></div>

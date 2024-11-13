@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 
 import CurrentWeatherDisplay from '../CurrentWeatherDisplay/CurrentWeatherDisplay';
 
@@ -10,7 +10,7 @@ interface ContentContainerProps {
 }
 
 const ContentContainer: React.FC<ContentContainerProps> = ({ weatherData, cityName }) => {
-  const memoizedWeatherData = React.useMemo(() => weatherData, [weatherData]);
+  const memoizedWeatherData = useMemo(() => weatherData, [weatherData]);
 
   return (
     <div id='content-container'>

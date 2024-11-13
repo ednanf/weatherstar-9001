@@ -1,8 +1,8 @@
-import React from 'react';
+import { memo } from 'react';
 
 import './Footer.css';
 
-const Footer = React.memo(() => {
+const Footer = memo(() => {
   return (
     <>
       <div id='footer-border'></div>
