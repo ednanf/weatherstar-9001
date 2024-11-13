@@ -3,7 +3,7 @@
  * @param {number} code - The numerical code representing the weather condition.
  * @returns {string} A string describing the weather condition, or undefined if the code is not recognized.
  */
-export default function useConditionCode(code: number) {
+export default function useConditionCode(code: number): string {
   switch (code) {
     case 0:
       return 'clear sky';
@@ -59,5 +59,7 @@ export default function useConditionCode(code: number) {
       return 'thunderstorm';
     case 96:
       return 'thunderstrom';
+    default:
+      return 'error';
   }
 }

@@ -1,3 +1,4 @@
+import { ReactElement } from 'react';
 import {
   CloudyIcon,
   FogIcon,
@@ -25,7 +26,7 @@ type useIcon = {
  * @param {string} size - The desired size of the icon. This is typically specified as a string (e.g., 'small', 'large').
  * @returns {ReactElement} - Returns a React element representing the appropriate weather icon, or a default message if the id does not match any known weather condition.
  */
-function useIcon(id: number, size: string) {
+function useIcon(id: number, size: string): ReactElement {
   switch (true) {
     // clear sky
     case id === 0:
