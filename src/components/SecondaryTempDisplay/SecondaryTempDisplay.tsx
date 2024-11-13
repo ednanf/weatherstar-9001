@@ -14,6 +14,8 @@ interface SecondaryTempDisplayProps {
   pressure: number;
 }
 
+// TODO: Adjust font sizes (bigger)
+
 const SecondaryTempDisplay: React.FC<SecondaryTempDisplayProps> = ({
   city,
   feelsLike,
@@ -32,7 +34,7 @@ const SecondaryTempDisplay: React.FC<SecondaryTempDisplayProps> = ({
         <p>Humidity: {Math.floor(humidity)}%</p>
         <p>Dewpoint: {dewpoint}°C</p>
         <p>Visibility: {useConvertToKm(visibility)}</p>
-        <p>Pressure: {pressure} hPa</p>
+        <p>Pressure: {pressure}hPa</p>
       </div>
     </div>
   );
