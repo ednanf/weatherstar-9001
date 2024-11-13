@@ -17,6 +17,8 @@ const CurrentWeatherDisplay: React.FC<WeatherDisplayProps> = ({ weatherData, cit
           temp={weatherData.hourly.temperature_2m[0]}
           desc={weatherData.hourly.weather_code[0]}
           iconCode={weatherData.hourly.weather_code[0]}
+          wind={weatherData.hourly.wind_speed_10m[0]}
+          windDirection={weatherData.hourly.wind_direction_10m[0]}
         />
       </div>
       <div className='content-container-item'>
