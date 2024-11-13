@@ -14,6 +14,8 @@ interface MainTempDisplayProps {
   windDirection: number;
 }
 
+// TODO: Find a way to add the moon icon variants when it's night
+
 const MainTempDisplay: React.FC<MainTempDisplayProps> = memo(({ temp, desc, iconCode, wind, windDirection }) => {
   return (
     <div id='main-temp-container'>
