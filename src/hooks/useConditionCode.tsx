@@ -1,3 +1,8 @@
+/**
+ * Converts a numerical weather condition code to its corresponding textual description.
+ * @param {number} code - The numerical code representing the weather condition.
+ * @returns {string} A string describing the weather condition, or undefined if the code is not recognized.
+ */
 export default function useConditionCode(code: number) {
   switch (code) {
     case 0:

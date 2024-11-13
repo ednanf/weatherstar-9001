@@ -1,9 +1,7 @@
 import {
-  ClearCondition,
   CloudyIcon,
   FogIcon,
   FreezingRainIcon,
-  FreezingRainSnowIcon,
   HeavySnowIcon,
   LightSnowIcon,
   MostlyCloudyIcon,
@@ -14,13 +12,19 @@ import {
   SunnyIcon,
   ThunderSnowIcon,
   ThunderStormIcon,
-  WindIcon,
 } from '../libraries/WeatherIcons';
 
 type useIcon = {
   id: string;
 };
 
+/**
+ * Custom React Hook to return an appropriate weather icon based on the provided weather code and size.
+ *
+ * @param {number} id - The unique identifier for the weather condition. This should correspond to a specific weather code.
+ * @param {string} size - The desired size of the icon. This is typically specified as a string (e.g., 'small', 'large').
+ * @returns {ReactElement} - Returns a React element representing the appropriate weather icon, or a default message if the id does not match any known weather condition.
+ */
 function useIcon(id: number, size: string) {
   switch (true) {
     // clear sky

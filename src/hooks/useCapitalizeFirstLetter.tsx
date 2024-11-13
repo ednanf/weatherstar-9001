@@ -1,8 +1,8 @@
-/* 
-    The parameter has to be optional to accept an undefined value. It will only
-    return if it isn't, so it will always work. Error handling will be applied
-    as needed.
-*/
+/**
+ * Capitalizes the first letter of each word in a given string.
+ * @param {string} [str] - The input string to be capitalized.
+ * @returns {string | undefined} - Returns the string with the first letter of each word capitalized, or undefined if the input is null or undefined.
+ */
 export default function capitalizeFirstLetter(str?: String) {
   if (str) {
     return str
