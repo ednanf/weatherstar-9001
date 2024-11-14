@@ -15,6 +15,7 @@ interface SecondaryTempDisplayProps {
 }
 
 // TODO: Adjust font sizes (bigger)
+// TODO: use weatherData.hourly_units instead of hard coding units! Check if the request accept imperial units
 
 const SecondaryTempDisplay: React.FC<SecondaryTempDisplayProps> = ({
   city,
