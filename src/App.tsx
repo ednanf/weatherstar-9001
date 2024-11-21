@@ -10,6 +10,7 @@ const LOCATION_API_KEY = import.meta.env.VITE_LOCATION_KEY;
 
 // TODO: Error handling when the user denies geolocation permissions.
 // TODO: Add clock to the top right corner of the page and check api calls.
+// TODO: Add spinner while loading data
 
 interface Coordinates {
   lat?: number;
