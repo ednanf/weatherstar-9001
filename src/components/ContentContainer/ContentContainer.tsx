@@ -2,11 +2,12 @@ import React, { useMemo } from 'react';
 
 import CurrentWeatherDisplay from '../CurrentWeatherDisplay/CurrentWeatherDisplay';
 import Clock from '../Clock/Clock';
+import { WeatherData } from '../../types/WeatherData.types';
 
 import './ContentContainer.css';
 
 interface ContentContainerProps {
-  weatherData: object;
+  weatherData: WeatherData;
   cityName: string;
 }
 
