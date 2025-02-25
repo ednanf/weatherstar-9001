@@ -6,7 +6,9 @@ import Footer from './components/Footer/Footer';
 
 import './App.css';
 
-const LOCATION_API_KEY = import.meta.env.VITE_LOCATION_KEY;
+enum ApiKeys {
+  LOCATION_API_KEY = import.meta.env.VITE_LOCATION_KEY,
+}
 
 // TODO: Error handling when the user denies geolocation permissions.
 // TODO: Add clock to the top right corner of the page and check api calls.
@@ -54,7 +56,11 @@ interface WeatherData {
   };
 }
 
-function App() {
+interface CityData {
+  name: string;
+}
+
+function App(): JSX.Element {
   const [coordinates, setCoordinates] = useState<Coordinates>({});
   const [cityName, setCityName] = useState('--');
   const [weatherData, setWeatherData] = useState<WeatherData>({
@@ -119,20 +125,19 @@ function App() {
    * @param {string} LOCATION_API_KEY - The API key for the OpenWeatherMap service.
    */
   useEffect(() => {
-    async function fetchCurrentCity() {
+    async function fetchCurrentCity(): Promise<void> {
       if (coordinates && Object.keys(coordinates).length > 0) {
         try {
           const response = await fetch(
-            `http://api.openweathermap.org/geo/1.0/reverse?lat=${coordinates.lat}&lon=${coordinates.lon}&limit=1&appid=${LOCATION_API_KEY}`,
+            `http://api.openweathermap.org/geo/1.0/reverse?lat=${coordinates.lat}&lon=${coordinates.lon}&limit=1&appid=${ApiKeys.LOCATION_API_KEY}`,
           );
-          const data = await response.json();
+          const data: CityData[] = await response.json();
           setCityName(data[0]?.name);
         } catch (error) {
           console.log('Error: ', error);
         }
       }
     }
-
     fetchCurrentCity();
   }, [coordinates]);
 
@@ -144,13 +149,13 @@ function App() {
    * @returns {void}
    */
   useEffect(() => {
-    async function fetchCurrentWeather() {
+    async function fetchCurrentWeather(): Promise<void> {
       if (coordinates && Object.keys(coordinates).length > 0) {
         try {
           const response = await fetch(
             `https://api.open-meteo.com/v1/forecast?latitude=${coordinates.lat}&longitude=${coordinates.lon}&hourly=temperature_2m,relative_humidity_2m,dew_point_2m,apparent_temperature,precipitation_probability,weather_code,surface_pressure,visibility,wind_speed_10m,wind_direction_10m,wind_gusts_10m&timezone=auto`,
           );
-          const data = await response.json();
+          const data: WeatherData = await response.json();
           setWeatherData({ ...data });
         } catch (error) {
           console.log(error);
