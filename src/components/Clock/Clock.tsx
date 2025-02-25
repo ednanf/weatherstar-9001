@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import './Clock.css';
 
-const Clock = () => {
+const Clock: React.FC = (): JSX.Element => {
   const [time, setTime] = useState<string>('--:--:--'); // Initialize with a default time string
   const dateObject = new Date();
 
@@ -31,13 +31,13 @@ const Clock = () => {
 
   /**
    * Formats a Date object into a string format 'DAYOFWEEK MONTH DAY'.
-   * @param date - The Date object or a timestamp that will be converted to a Date object.
-   * @returns A string in the format 'DAYOFWEEK MONTH DAY'.
+   * @param {Date} date - The Date object or a timestamp that will be converted to a Date object.
+   * @returns {string} A string in the format 'DAYOFWEEK MONTH DAY'.
    * @example
    * const date = new Date();
    * console.log(getFormattedDate(date)); // Outputs something like 'SUN JAN 1' for the current date
    */
-  function getFormattedDate(date: Date) {
+  const getFormattedDate = (date: Date): string => {
     const days = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
     const months = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
 
@@ -50,7 +50,7 @@ const Clock = () => {
     const day = date.getDate();
 
     return `${dayOfWeek} ${month} ${day}`;
-  }
+  };
 
   return (
     <div id='clock'>
