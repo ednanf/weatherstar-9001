@@ -15,10 +15,15 @@ interface MainTempDisplayProps {
   windDirection: number;
 }
 
-// TODO: Find a way to add the moon icon variants when it's night
-
+/**
+ * MainTempDisplay component that displays the main temperature, weather conditions, and wind information.
+ * Uses React.memo for performance optimization.
+ *
+ * @param {MainTempDisplayProps} props - The properties for the component.
+ * @returns {JSX.Element} The rendered MainTempDisplay component.
+ */
 const MainTempDisplay: React.FC<MainTempDisplayProps> = memo(
-  ({ temp, tempUnit, desc, iconCode, wind, windDirection }) => {
+  ({ temp, tempUnit, desc, iconCode, wind, windDirection }): JSX.Element => {
     return (
       <div id='main-temp-container'>
         <div id='main-temp-conditions'>

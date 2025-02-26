@@ -21,6 +21,12 @@ interface SecondaryTempDisplayProps {
 // TODO: Visibility won't use weatherData units as it is easier to convert via hook
 // TODO: Make converToImperial
 
+/**
+ * SecondaryTempDisplay component that displays additional weather details such as feels like temperature, humidity, dewpoint, visibility, and pressure.
+ *
+ * @param {SecondaryTempDisplayProps} props - The properties for the component.
+ * @returns {JSX.Element} The rendered SecondaryTempDisplay component.
+ */
 const SecondaryTempDisplay: React.FC<SecondaryTempDisplayProps> = ({
   city,
   feelsLike,
@@ -31,7 +37,7 @@ const SecondaryTempDisplay: React.FC<SecondaryTempDisplayProps> = ({
   visibility,
   pressure,
   pressureUnit,
-}) => {
+}): JSX.Element => {
   return (
     <div id='secondary-temp-container'>
       <div id='secondary-city'>

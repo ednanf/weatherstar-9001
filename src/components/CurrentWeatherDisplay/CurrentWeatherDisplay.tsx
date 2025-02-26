@@ -1,3 +1,7 @@
+/**
+ * Renders the current weather data and additional weather details.
+ * Uses optional chaining and fallback values for numeric properties.
+ */
 import React from 'react';
 import { WeatherData } from '../../types/WeatherData.types';
 
@@ -9,6 +13,10 @@ interface WeatherDisplayProps {
   cityName: string;
 }
 
+/**
+ * Renders the current weather data and additional weather details.
+ * Weather data fields are retrieved from the WeatherData interface and displayed as required.
+ */
 const CurrentWeatherDisplay: React.FC<WeatherDisplayProps> = ({ weatherData, cityName }) => {
   return (
     <>
