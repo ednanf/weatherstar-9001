@@ -26,106 +26,112 @@ import WintryMixImage from '../assets/WeatherIcons/Wintry-Mix.gif';
 
 import './WeatherIcons.css';
 
-interface Props {
+type Props = {
   size: string;
-}
+};
 
-export function BlowingSnowIcon({ size }: Props) {
+export function BlowingSnowIcon({ size }: Props): JSX.Element {
   return <img src={BlowingSnowImage} alt='Blowing Snow' className={size} />;
 }
 
-export function ClearCondition({ size }: Props) {
+export function ClearCondition({ size }: Props): JSX.Element {
   return <img src={ClearImage} alt='Clear' className={size} />;
 }
 
-export function CloudyIcon({ size }: Props) {
+export function CloudyIcon({ size }: Props): JSX.Element {
   return <img src={CloudyImage} alt='Cloudy' className={size} />;
 }
 
-export function FogIcon({ size }: Props) {
+export function FogIcon({ size }: Props): JSX.Element {
   return <img src={FogImage} alt='Fog' className={size} />;
 }
 
-export function FreezingRainSleetIcon({ size }: Props) {
+export function FreezingRainSleetIcon({ size }: Props): JSX.Element {
   return <img src={FreezingRainSleetImage} alt='Freezing Rain Sleet' className={size} />;
 }
 
-export function FreezingRainSnowIcon({ size }: Props) {
+export function FreezingRainSnowIcon({ size }: Props): JSX.Element {
   return <img src={FreezingRainSnowImage} alt='Freezing Rain Snow' className={size} />;
 }
 
-export function FreezingRainIcon({ size }: Props) {
+/**
+ * Renders icons.
+ * @param {Props} props - The properties for the component.
+ * @returns {JSX.Element} The rendered icon.
+ */
+
+export function FreezingRainIcon({ size }: Props): JSX.Element {
   return <img src={FreezingRainImage} alt='Freezing Rain' className={size} />;
 }
 
-export function HeavySnowIcon({ size }: Props) {
+export function HeavySnowIcon({ size }: Props): JSX.Element {
   return <img src={HeavySnowImage} alt='Heavy Snow' className={size} />;
 }
 
-export function LightSnowIcon({ size }: Props) {
+export function LightSnowIcon({ size }: Props): JSX.Element {
   return <img src={LightSnowImage} alt='Light Snow' className={size} />;
 }
 
-export function MostlyClearIcon({ size }: Props) {
+export function MostlyClearIcon({ size }: Props): JSX.Element {
   return <img src={MostlyClearImage} alt='Mostly Clear' className={size} />;
 }
 
-export function MostlyCloudyIcon({ size }: Props) {
+export function MostlyCloudyIcon({ size }: Props): JSX.Element {
   return <img src={MostlyCloudyImage} alt='Mostly Cloudy' className={size} />;
 }
 
-export function PartlyClearIcon({ size }: Props) {
+export function PartlyClearIcon({ size }: Props): JSX.Element {
   return <img src={PartlyClearImage} alt='Partly Clear' className={size} />;
 }
 
-export function PartlyCloudyIcon({ size }: Props) {
+export function PartlyCloudyIcon({ size }: Props): JSX.Element {
   return <img src={PartlyCloudyImage} alt='Partly Cloudy' className={size} />;
 }
 
-export function RainSleetIcon({ size }: Props) {
+export function RainSleetIcon({ size }: Props): JSX.Element {
   return <img src={RainSleetImage} alt='Rain Sleet' className={size} />;
 }
 
-export function RainSnowIcon({ size }: Props) {
+export function RainSnowIcon({ size }: Props): JSX.Element {
   return <img src={RainSnowImage} alt='Rain Snow' className={size} />;
 }
 
-export function RainIcon({ size }: Props) {
+export function RainIcon({ size }: Props): JSX.Element {
   return <img src={RainImage} alt='Rain' className={size} />;
 }
 
-export function ShowerIcon({ size }: Props) {
+export function ShowerIcon({ size }: Props): JSX.Element {
   return <img src={ShowerImage} alt='Shower' className={size} />;
 }
 
-export function SleetIcon({ size }: Props) {
+export function SleetIcon({ size }: Props): JSX.Element {
   return <img src={SleetImage} alt='Sleet' className={size} />;
 }
 
-export function SnowSleetIcon({ size }: Props) {
+export function SnowSleetIcon({ size }: Props): JSX.Element {
   return <img src={SnowSleetImage} alt='Snow Sleet' className={size} />;
 }
 
-export function SunnyIcon({ size }: Props) {
+export function SunnyIcon({ size }: Props): JSX.Element {
   return <img src={SunnyImage} alt='Sunny' className={size} />;
 }
 
-export function ThunderIcon({ size }: Props) {
+export function ThunderIcon({ size }: Props): JSX.Element {
   return <img src={ThunderImage} alt='Thunder' className={size} />;
 }
 
-export function ThunderSnowIcon({ size }: Props) {
+export function ThunderSnowIcon({ size }: Props): JSX.Element {
   return <img src={ThunderSnowImage} alt='Thunder Snow' className={size} />;
 }
 
-export function ThunderStormIcon({ size }: Props) {
+export function ThunderStormIcon({ size }: Props): JSX.Element {
   return <img src={ThunderStormImage} alt='Thunder Storm' className={size} />;
 }
 
-export function WindIcon({ size }: Props) {
+export function WindIcon({ size }: Props): JSX.Element {
   return <img src={WindImage} alt='Windy' className={size} />;
 }
 
-export function WintryMixIcon({ size }: Props) {
+export function WintryMixIcon({ size }: Props): JSX.Element {
   return <img src={WintryMixImage} alt='Wintry Mix' className={size} />;
 }
