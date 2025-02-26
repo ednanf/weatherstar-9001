@@ -1,64 +1,82 @@
+enum WeatherConditionCode {
+  ClearSky = 0,
+  MainlyClear = 1,
+  PartlyCloudy = 2,
+  Overcast = 3,
+  Fog = 45,
+  LightDrizzle = 51,
+  Drizzle = 53,
+  HeavyDrizzle = 55,
+  FreezingDrizzle = 56,
+  LightRain = 61,
+  Rain = 63,
+  HeavyRain = 65,
+  FreezingRain = 66,
+  LightSnow = 71,
+  Snow = 73,
+  HeavySnow = 75,
+  SnowGrains = 77,
+  LightShowers = 80,
+  Showers = 81,
+  HeavyShowers = 82,
+  SnowShowers = 85,
+  Thunderstorm = 95,
+  ThunderstormWithHail = 96,
+}
+
 /**
  * Converts a numerical weather condition code to its corresponding textual description.
- * @param {number} code - The numerical code representing the weather condition.
- * @returns {string} A string describing the weather condition, or undefined if the code is not recognized.
+ * @param {WeatherConditionCode} code - The numerical code representing the weather condition.
+ * @returns {string} A string describing the weather condition, or 'error' if the code is not recognized.
  */
-export default function useConditionCode(code: number): string {
+export default function useConditionCode(code: WeatherConditionCode): string {
   switch (code) {
-    case 0:
+    case WeatherConditionCode.ClearSky:
       return 'clear sky';
-    case 1:
+    case WeatherConditionCode.MainlyClear:
       return 'mainly clear';
-    case 2:
+    case WeatherConditionCode.PartlyCloudy:
       return 'partly cloudy';
-    case 3:
+    case WeatherConditionCode.Overcast:
       return 'overcast';
-    case 45:
+    case WeatherConditionCode.Fog:
       return 'fog';
-    case 48:
-      return 'fog';
-    case 51:
+    case WeatherConditionCode.LightDrizzle:
       return 'light drizzle';
-    case 53:
+    case WeatherConditionCode.Drizzle:
       return 'drizzle';
-    case 55:
+    case WeatherConditionCode.HeavyDrizzle:
       return 'heavy drizzle';
-    case 56:
+    case WeatherConditionCode.FreezingDrizzle:
       return 'freezing drizzle';
-    case 57:
-      return 'freezing drizzle';
-    case 61:
+    case WeatherConditionCode.LightRain:
       return 'light rain';
-    case 63:
+    case WeatherConditionCode.Rain:
       return 'rain';
-    case 65:
+    case WeatherConditionCode.HeavyRain:
       return 'heavy rain';
-    case 66:
+    case WeatherConditionCode.FreezingRain:
       return 'freezing rain';
-    case 67:
-      return 'freezing rain';
-    case 71:
+    case WeatherConditionCode.LightSnow:
       return 'light snow';
-    case 73:
+    case WeatherConditionCode.Snow:
       return 'snow';
-    case 75:
+    case WeatherConditionCode.HeavySnow:
       return 'heavy snow';
-    case 77:
+    case WeatherConditionCode.SnowGrains:
       return 'snow grains';
-    case 80:
+    case WeatherConditionCode.LightShowers:
       return 'light showers';
-    case 81:
+    case WeatherConditionCode.Showers:
       return 'showers';
-    case 82:
+    case WeatherConditionCode.HeavyShowers:
       return 'heavy showers';
-    case 85:
+    case WeatherConditionCode.SnowShowers:
       return 'snow showers';
-    case 86:
-      return 'snow showers';
-    case 95:
+    case WeatherConditionCode.Thunderstorm:
       return 'thunderstorm';
-    case 96:
-      return 'thunderstrom';
+    case WeatherConditionCode.ThunderstormWithHail:
+      return 'thunderstorm with hail';
     default:
       return 'error';
   }
